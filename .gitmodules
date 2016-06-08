@@ -1,0 +1,6 @@
+[submodule "nepenlibrary/unittests/googletest"]
+	path = nepenlibrary/unittests/googletest
+	url = https://github.com/google/googletest.git
+[submodule "nepenlibrary/date"]
+	path = nepenlibrary/date
+	url = https://github.com/HowardHinnant/date.git
