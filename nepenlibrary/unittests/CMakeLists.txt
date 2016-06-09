@@ -21,7 +21,7 @@ INCLUDE_DIRECTORIES(C:/MinGW/include/
 # set the files to compile
 ADD_EXECUTABLE(NepenLibraryUnitTests
                     ${CMAKE_CURRENT_SOURCE_DIR}/test.cpp
-                    # ${CMAKE_CURRENT_SOURCE_DIR}/test_regex.cpp
+                    ${CMAKE_CURRENT_SOURCE_DIR}/test_nepen.cpp
                     # ${CMAKE_CURRENT_SOURCE_DIR}/test_time.cpp
                 )
 

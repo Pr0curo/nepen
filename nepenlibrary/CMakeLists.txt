@@ -22,6 +22,8 @@ INCLUDE_DIRECTORIES(C:/MinGW/include/
 # set the files to compile
 ADD_LIBRARY(NepenLibrary
                     ${CMAKE_CURRENT_SOURCE_DIR}/src/nepen.cpp
+                    ${CMAKE_CURRENT_SOURCE_DIR}/src/board.cpp
+                    ${CMAKE_CURRENT_SOURCE_DIR}/src/pile.cpp
                     )
 
 add_subdirectory(unittests)

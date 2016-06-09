@@ -1,13 +1,34 @@
 #include <gtest/gtest.h>
 
-#include "nepen.hpp"
+#include "board.hpp"
+#include "pile.hpp"
 
-TEST(GetOne, simple)
+
+TEST(BoardTests, CreateEmpty)
 {
-    EXPECT_EQ(get_one(), 1);
+    Board b;
+    EXPECT_EQ(static_cast<unsigned int>(0), b.NumberOfPiles());
+
 }
 
-TEST(Bewerbung, CreateEmpty)
+TEST(BoardTests, FillBoard)
 {
-    EXPECT_TRUE(true);
+    Board b;
+    auto t = b.AddPile("Caption");
+
+    EXPECT_TRUE(t);
+
+    EXPECT_EQ(static_cast<unsigned int>(1), b.NumberOfPiles());
+
+}
+
+TEST(BoardTests, GetPile)
+{
+    Board b;
+    auto oPileId = b.AddPile("Sowas");
+    EXPECT_TRUE(oPileId);
+
+    auto pile = b.GetPile(*oPileId);
+
+    EXPECT_TRUE((*pile).GetId() != 0);
 }
