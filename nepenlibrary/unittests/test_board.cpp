@@ -7,7 +7,7 @@
 TEST(BoardTests, CreateEmpty)
 {
     Board b;
-    EXPECT_EQ(static_cast<unsigned int>(0), b.NumberOfPiles());
+    EXPECT_EQ(0u, b.NumberOfPiles());
 
 }
 
@@ -18,8 +18,7 @@ TEST(BoardTests, FillBoard)
 
     EXPECT_TRUE(t);
 
-    EXPECT_EQ(static_cast<unsigned int>(1), b.NumberOfPiles());
-
+    EXPECT_EQ(1u, b.NumberOfPiles());
 }
 
 TEST(BoardTests, GetPile)
@@ -31,4 +30,15 @@ TEST(BoardTests, GetPile)
     auto pile = b.GetPile(*oPileId);
 
     EXPECT_TRUE((*pile).GetId() != 0);
+}
+
+TEST(BoardTests, GetPilesCaption)
+{
+    Board b;
+    auto pileId = b.AddPile("Sowas");
+    EXPECT_TRUE(pileId);
+
+    auto pile = b.GetPile(*pileId);
+
+    EXPECT_EQ(std::string("Sowas"), (*pile).GetCaption());
 }

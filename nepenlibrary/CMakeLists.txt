@@ -24,6 +24,7 @@ ADD_LIBRARY(NepenLibrary
                     ${CMAKE_CURRENT_SOURCE_DIR}/src/nepen.cpp
                     ${CMAKE_CURRENT_SOURCE_DIR}/src/board.cpp
                     ${CMAKE_CURRENT_SOURCE_DIR}/src/pile.cpp
+                    ${CMAKE_CURRENT_SOURCE_DIR}/src/card.cpp
                     )
 
 add_subdirectory(unittests)

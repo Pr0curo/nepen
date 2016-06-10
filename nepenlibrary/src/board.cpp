@@ -4,6 +4,16 @@ Board::Board(BoardId Id, const std::string& Caption) : m_Id(Id), m_Caption(Capti
 {   // empty on purpose
 }
 
+std::string Board::GetCaption() const
+{
+    return m_Caption;
+}
+
+BoardId Board::GetId() const
+{
+    return m_Id;
+}
+
 unsigned int Board::NumberOfPiles()
 {
     return m_Piles.size();
