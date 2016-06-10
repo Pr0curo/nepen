@@ -5,13 +5,14 @@
 TEST(CardTests, CreateEmpty)
 {
     Card card;
-    EXPECT_FALSE(card.GetId());
+    EXPECT_TRUE(card.GetId());
 }
 
 TEST(CardTests, CreateFilled)
 {
-    Card card(23, "Sowas");
+    Card card("Sowas");
     EXPECT_TRUE(card.GetId());
     EXPECT_EQ(std::string("Sowas"), card.GetCaption());
+
 }
 

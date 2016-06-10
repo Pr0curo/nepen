@@ -4,6 +4,8 @@
 #include <vector>
 #include <experimental/optional>
 
+#include <boost/uuid/uuid.hpp>
+
 #include "pile.hpp"
 
 using BoardId = unsigned int;

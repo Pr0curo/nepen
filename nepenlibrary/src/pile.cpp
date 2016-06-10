@@ -26,8 +26,9 @@ CardCount Pile::CardCount() const
 
 opt::optional<CardId> Pile::AddCard(std::string const& Caption)
 { // ✔ fixme id @done (June 10th 2016, 9:00)
-    m_Cards.push_back(Card(++m_CardIdCounter, Caption));
-    return m_CardIdCounter;
+    Card c(Caption);
+    m_Cards.push_back(c);
+    return c.GetId();
 }
 
 opt::optional<Card> Pile::GetCard(CardId Id) const

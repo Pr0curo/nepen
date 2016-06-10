@@ -1,26 +1,22 @@
 #include "card.hpp"
 
-Card::Card()
+Card::Card() : m_Id()
 {
-    // empty
+    boost::uuids::random_generator gen;
+    m_Id = gen();
 }
 
-Card::Card(CardId Id, std::string const & Caption) : m_Id(Id), m_Caption(Caption)
+Card::Card(std::string const & Caption) : Card()
 {
-
+    m_Caption = Caption;
 }
 
-    opt::optional<CardId> Card::GetId() const
-    {
-        if(m_Id != 0)
-        {
-            return m_Id;
-        }
+opt::optional<CardId> Card::GetId() const
+{
+    return m_Id;
+}
 
-        return opt::nullopt;
-    }
-
-    std::string Card::GetCaption() const
-    {
-        return m_Caption;
-    }
+std::string Card::GetCaption() const
+{
+    return m_Caption;
+}
