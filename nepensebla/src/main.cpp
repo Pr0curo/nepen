@@ -1,9 +1,15 @@
 #include <iostream>
+#include "nepen_form.hpp"
 
 // int main(int argc, const char *argv[])
 int main()
 {
-    std::cout << "NepenToDo" << std::endl;
+    NepenForm fm;
+
+    fm.show();
+
+    nana::exec();
+
 
     return 0;
 }

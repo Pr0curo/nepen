@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 2.8)
 PROJECT(Nepensebla)
 
 #searching for nana
-# find_package(nana REQUIRED)
+find_package(nana REQUIRED)
 
 # C++ Compiler Definitions
 add_definitions(-std=c++14)
@@ -25,9 +25,10 @@ SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}")
 # set include direcoties
 INCLUDE_DIRECTORIES(
                     ${CMAKE_CURRENT_SOURCE_DIR}/../include/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/include/
 					${CMAKE_CURRENT_SOURCE_DIR}/../nepenlibrary/include/
 					# C:/MinGW/include/
-					# "${nana_INCLUDE_DIRS}"
+					"${nana_INCLUDE_DIRS}"
 					)
 
 
@@ -39,6 +40,7 @@ LINK_DIRECTORIES(	${CMAKE_CURRENT_SOURCE_DIR}/../extlib
 # set the files to compile
 ADD_EXECUTABLE(Nepensebla
                     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
+                    ${CMAKE_CURRENT_SOURCE_DIR}/src/nepen_form.cpp
                 )
 
 
@@ -46,5 +48,5 @@ ADD_EXECUTABLE(Nepensebla
 target_link_libraries(Nepensebla
 						NepenLibrary
 						# boost_program_options
-						# "${nana_LIBRARY}"
+						"${nana_LIBRARY}"
 						)
