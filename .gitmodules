@@ -4,3 +4,6 @@
 [submodule "nepenlibrary/date"]
 	path = nepenlibrary/date
 	url = https://github.com/HowardHinnant/date.git
+[submodule "GSL"]
+	path = GSL
+	url = https://github.com/Microsoft/GSL.git
