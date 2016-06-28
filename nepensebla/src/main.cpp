@@ -1,10 +1,16 @@
 #include <iostream>
 #include "nepen_form.hpp"
 
+#include "nepen.hpp"
+
+#include <memory>
+
 // int main(int argc, const char *argv[])
 int main()
 {
-    NepenForm fm;
+    auto nep = std::make_unique<Nepen>();
+
+    NepenForm fm(std::move(nep));
 
     fm.show();
 

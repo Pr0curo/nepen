@@ -22,3 +22,10 @@ opt::optional<const Board> Nepen::GetBoard(BoardId Id)
     }
     return opt::nullopt;
 }
+
+void Nepen::Reset()
+{
+    m_Boards.clear();
+
+    TellEveryoneIChanged();
+}

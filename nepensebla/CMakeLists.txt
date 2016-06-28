@@ -26,8 +26,9 @@ SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}")
 INCLUDE_DIRECTORIES(
                     ${CMAKE_CURRENT_SOURCE_DIR}/../include/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/
+					${CMAKE_CURRENT_SOURCE_DIR}/../GSL/include/
 					${CMAKE_CURRENT_SOURCE_DIR}/../nepenlibrary/include/
-					# C:/MinGW/include/
+					C:/MinGW/include/
 					"${nana_INCLUDE_DIRS}"
 					)
 
@@ -41,6 +42,7 @@ LINK_DIRECTORIES(	${CMAKE_CURRENT_SOURCE_DIR}/../extlib
 ADD_EXECUTABLE(Nepensebla
                     ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
                     ${CMAKE_CURRENT_SOURCE_DIR}/src/nepen_form.cpp
+                    ${CMAKE_CURRENT_SOURCE_DIR}/src/nepen_controller.cpp
                 )
 
 

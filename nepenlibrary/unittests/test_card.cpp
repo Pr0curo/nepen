@@ -13,6 +13,5 @@ TEST(CardTests, CreateFilled)
     Card card("Sowas");
     EXPECT_TRUE(card.GetId());
     EXPECT_EQ(std::string("Sowas"), card.GetCaption());
-
 }
 

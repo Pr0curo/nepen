@@ -2,7 +2,34 @@
 
 #include "nepen.hpp"
 
-TEST(NepenTests, CreateEmpty)
+class NepenTestFixture : public ::testing::Test
+{
+public:
+    NepenTestFixture()
+    {
+    }
+    void SetUp( )
+    {
+        m_BoardId = *m_Nepen.AddBoard("firstBoard");
+    }
+    void TearDown( )
+    {
+    }
+    Nepen m_Nepen;
+
+    BoardId m_BoardId;
+};
+
+TEST_F(NepenTestFixture, test1)
+{
+    EXPECT_EQ(1u, m_Nepen.BoardCount());
+
+    EXPECT_EQ(1u, m_BoardId);
+
+
+}
+
+TEST(NepenTests, DISABLE_CreateEmpty)
 {
     Nepen nep;
     EXPECT_EQ(0u, nep.BoardCount());
@@ -39,4 +66,14 @@ TEST(NepenTests, GetBoardsCaption)
     EXPECT_TRUE(TestBoard);
 
     EXPECT_EQ(std::string("BoardsCaption"), (*TestBoard).GetCaption());
+}
+
+TEST(NepenTests, Reset)
+{
+    Nepen nep;
+    nep.AddBoard("BoardsCaption");
+
+    nep.Reset();
+
+    EXPECT_EQ(0u, nep.BoardCount());
 }

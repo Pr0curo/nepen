@@ -16,6 +16,7 @@ SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}")
 # set include direcoties
 INCLUDE_DIRECTORIES(C:/MinGW/include/
 					${CMAKE_CURRENT_SOURCE_DIR}/include/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/../GSL/include/
                     ${CMAKE_CURRENT_SOURCE_DIR}/date/
 					)
 
