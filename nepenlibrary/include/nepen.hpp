@@ -21,6 +21,17 @@ public:
     BoardCount BoardCount();
     opt::optional<BoardId> AddBoard(const std::string& Caption);
     opt::optional<const Board> GetBoard(BoardId Id);
+    std::vector<BoardId> GetBoardIds()
+    {
+        std::vector<BoardId> BoardIds;
+
+        for(auto& Board : m_Boards)
+        {
+            BoardIds.push_back(Board.GetId());
+        }
+
+        return BoardIds;
+    }
 
     void Reset();
 

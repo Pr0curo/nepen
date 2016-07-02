@@ -9,3 +9,11 @@ NepenController::NepenController(NepenForm& View, Nepen& Modell) :
 {
     // empty
 }
+
+void NepenController::NewBoardBtnClicked()
+{
+    //std::cout << "New Board Button Clicked!!!" << std::endl;
+    //m_Modell.Reset();
+    // bedingungen prüfen ob wir den klick weiter verfolgen wollen
+    m_View.ShowNewBoardDlg();
+}

@@ -20,15 +20,44 @@ public:
     virtual void ModellUpdated() override
     {
         std::cout << "View was notified that Modell has changed State\n";
+
+        m_Todos.clear();
+
+        auto BoardIds = m_Modell->GetBoardIds();
+
+        auto cat = m_Todos.at(0);
+
+        for(auto& BoardId : BoardIds)
+        {
+            auto optBoard = m_Modell->GetBoard(BoardId);
+            if(optBoard)
+            {
+                cat.append((*optBoard).GetCaption());
+            }
+        }
+
+    }
+
+    void ShowNewBoardDlg()
+    {
+        nana::inputbox::text Caption("<blue> Caption</>");
+
+        nana::inputbox inbox(*this, "Test");
+
+        if(inbox.show(Caption))
+        {
+            auto capt = Caption.value();
+            m_Controller->RequestNewBoard(capt);
+        }
     }
 
 private:
-    nana::place m_Place{*this};
-    nana::listbox m_Todos{*this};
-    nana::button m_CreateNewProject{*this};
-    nana::button m_CreateNewBoard{*this};
-    nana::button m_CreateNewPile{*this};
-    nana::button m_CreateNewCard{*this};
+    nana::place     m_Place{*this};
+    nana::listbox   m_Todos{*this};
+    nana::button    m_CreateNewProject{*this};
+    nana::button    m_CreateNewBoard{*this};
+    nana::button    m_CreateNewPile{*this};
+    nana::button    m_CreateNewCard{*this};
 
     Nepen m_Nepen;
 

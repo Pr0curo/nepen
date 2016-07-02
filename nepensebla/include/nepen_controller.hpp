@@ -5,6 +5,7 @@
 
 #include "nepen.hpp"
 
+
 class NepenForm;
 
 class NepenController
@@ -20,6 +21,16 @@ public:
 
     }
 
+    void NewBoardBtnClicked();
+
+    void RequestNewBoard(std::string const& BoardName)
+    {
+        if(BoardName.empty())
+        {
+            return;
+        }
+        m_Modell.AddBoard(BoardName);
+    }
 private:
 
     NepenForm&  m_View;

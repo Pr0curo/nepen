@@ -8,6 +8,9 @@ BoardCount Nepen::BoardCount()
 opt::optional<BoardId> Nepen::AddBoard(const std::string& Caption)
 {
     m_Boards.push_back(Board(++m_BoardIdCounter, Caption));
+
+    TellEveryoneIChanged();
+
     return m_BoardIdCounter;
 }
 

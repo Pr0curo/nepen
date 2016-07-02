@@ -19,11 +19,15 @@ NepenForm::NepenForm(std::unique_ptr<Nepen> && nepen) : m_Modell(std::move(nepen
         m_Controller->NewProjectBtnClicked();
     });
 
-    m_CreateNewBoard.events().click([](){std::cout << "new board\n";});
+    m_CreateNewBoard.events().click([&]()
+    {
+        m_Controller->NewBoardBtnClicked();
+    });
+
     m_CreateNewPile.events().click([](){std::cout << "new pile\n";});
     m_CreateNewCard.events().click([](){std::cout << "new card\n";});
 
-    m_Place.div("<lb><vertical <new_nepen><new_board><new_pile><new_card>>");
+    m_Place.div("<lb><vertical <new_nepen><new_board><new_pile><new_card> >");
 
     m_Place["lb"] << m_Todos;
     m_Place["new_nepen"] << m_CreateNewProject;
@@ -32,4 +36,7 @@ NepenForm::NepenForm(std::unique_ptr<Nepen> && nepen) : m_Modell(std::move(nepen
     m_Place["new_card"] << m_CreateNewCard;
 
     m_Place.collocate();
+
+    m_Todos.append_header("Board");
 }
+
