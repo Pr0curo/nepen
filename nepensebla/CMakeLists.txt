@@ -27,9 +27,7 @@ INCLUDE_DIRECTORIES(
                     ${CMAKE_CURRENT_SOURCE_DIR}/../include/
                     ${CMAKE_CURRENT_SOURCE_DIR}/include/
 					${CMAKE_CURRENT_SOURCE_DIR}/../GSL/include/
-					${CMAKE_CURRENT_SOURCE_DIR}/wren/src/include/
-					${CMAKE_CURRENT_SOURCE_DIR}/wren/src/vm/
-					${CMAKE_CURRENT_SOURCE_DIR}/wren/src/optional/
+					${CMAKE_CURRENT_SOURCE_DIR}/../../lua-5.3.3/src/
 					${CMAKE_CURRENT_SOURCE_DIR}/../nepenlibrary/include/
 					C:/MinGW/include/
 					"${nana_INCLUDE_DIRS}"
@@ -54,4 +52,5 @@ target_link_libraries(Nepensebla
 						NepenLibrary
 						# boost_program_options
 						"${nana_LIBRARY}"
+						"${CMAKE_CURRENT_SOURCE_DIR}/../../lua-5.3.3/lib/liblua.a"
 						)
