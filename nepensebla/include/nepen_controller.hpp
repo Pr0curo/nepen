@@ -29,6 +29,7 @@ public:
         {
             return;
         }
+
         m_Modell.AddBoard(BoardName);
     }
 private:
