@@ -21,5 +21,4 @@ int main()
     return 0;
 }
 
-// ☐ sowas...
-// ☐ mehr davon
+

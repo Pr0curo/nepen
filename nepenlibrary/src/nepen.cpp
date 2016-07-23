@@ -1,26 +1,28 @@
 #include "nepen.hpp"
 
-BoardCount Nepen::BoardCount()
+ItemCount Nepen::ItemCount()
 {
-    return m_Boards.size();
+    return m_Items.size();
 }
 
-opt::optional<BoardId> Nepen::AddBoard(const std::string& Caption)
+opt::optional<ItemId> Nepen::AddItem(const std::string& Caption)
 {
-    m_Boards.push_back(Board(++m_BoardIdCounter, Caption));
+    Item    item(Caption);
+    auto item_id = item.GetId();
+    m_Items.push_back(item);
 
     TellEveryoneIChanged();
 
-    return m_BoardIdCounter;
+    return item_id;
 }
 
-opt::optional<const Board> Nepen::GetBoard(BoardId Id)
+opt::optional<const Item> Nepen::GetItem(ItemId Id)
 {
-    for(auto& board : m_Boards)
+    for(auto& Item : m_Items)
     {
-        if(Id == board.GetId())
+        if(Id == Item.GetId())
         {
-            return board;
+            return Item;
         }
     }
     return opt::nullopt;
@@ -28,7 +30,7 @@ opt::optional<const Board> Nepen::GetBoard(BoardId Id)
 
 void Nepen::Reset()
 {
-    m_Boards.clear();
+    m_Items.clear();
 
     TellEveryoneIChanged();
 }

@@ -23,22 +23,22 @@ public:
 
         m_Todos.clear();
 
-        auto BoardIds = m_Modell->GetBoardIds();
+        auto ItemIds = m_Modell->GetItemIds();
 
         auto cat = m_Todos.at(0);
 
-        for(auto& BoardId : BoardIds)
+        for(auto& ItemId : ItemIds)
         {
-            auto optBoard = m_Modell->GetBoard(BoardId);
-            if(optBoard)
+            auto optItem = m_Modell->GetItem(ItemId);
+            if(optItem)
             {
-                cat.append((*optBoard).GetCaption());
+                cat.append((*optItem).GetCaption());
             }
         }
 
     }
 
-    void ShowNewBoardDlg()
+    void ShowNewItemDlg()
     {
         nana::inputbox::text Caption("<blue> Caption</>");
 
@@ -47,7 +47,7 @@ public:
         if(inbox.show(Caption))
         {
             auto capt = Caption.value();
-            m_Controller->RequestNewBoard(capt);
+            m_Controller->RequestNewItem(capt);
         }
     }
 
@@ -55,9 +55,7 @@ private:
     nana::place     m_Place{*this};
     nana::listbox   m_Todos{*this};
     nana::button    m_CreateNewProject{*this};
-    nana::button    m_CreateNewBoard{*this};
-    nana::button    m_CreateNewPile{*this};
-    nana::button    m_CreateNewCard{*this};
+    nana::button    m_CreateNewItem{*this};
 
     Nepen m_Nepen;
 

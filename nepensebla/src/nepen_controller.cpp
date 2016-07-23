@@ -10,10 +10,10 @@ NepenController::NepenController(NepenForm& View, Nepen& Modell) :
     // empty
 }
 
-void NepenController::NewBoardBtnClicked()
+void NepenController::NewItemBtnClicked()
 {
-    //std::cout << "New Board Button Clicked!!!" << std::endl;
+    //std::cout << "New Item Button Clicked!!!" << std::endl;
     //m_Modell.Reset();
     // bedingungen prüfen ob wir den klick weiter verfolgen wollen
-    m_View.ShowNewBoardDlg();
+    m_View.ShowNewItemDlg();
 }

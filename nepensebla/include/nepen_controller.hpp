@@ -21,16 +21,16 @@ public:
 
     }
 
-    void NewBoardBtnClicked();
+    void NewItemBtnClicked();
 
-    void RequestNewBoard(std::string const& BoardName)
+    void RequestNewItem(std::string const& ItemName)
     {
-        if(BoardName.empty())
+        if(ItemName.empty())
         {
             return;
         }
 
-        m_Modell.AddBoard(BoardName);
+        m_Modell.AddItem(ItemName);
     }
 private:
 

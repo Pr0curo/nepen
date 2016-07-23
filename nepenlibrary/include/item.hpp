@@ -8,18 +8,18 @@ namespace opt = std::experimental;
 
 #include <boost/uuid/uuid.hpp>
 
-using CardId = boost::uuids::uuid;
+using ItemId = boost::uuids::uuid;
 
-class Card
+class Item
 {
 public:
-    Card();
-    Card(std::string const & Caption);
+    Item();
+    Item(std::string const & Caption);
 
-    opt::optional<CardId> GetId() const;
+    opt::optional<ItemId> GetId() const;
     std::string GetCaption() const;
 
 private:
-    CardId  m_Id;
+    ItemId  m_Id;
     std::string m_Caption = std::string("");
 };

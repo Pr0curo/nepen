@@ -5,32 +5,35 @@
 #include <memory>
 #include <experimental/optional>
 
-#include "board.hpp"
+#include "item.hpp"
 #include "subject.hpp"
 
 #include "gsl.h"
 
 namespace opt = std::experimental;
 
-using BoardCount = unsigned int;
-using BoardId = unsigned int;
+using ItemCount = unsigned int;
 
 class Nepen
 {
 public:
-    BoardCount BoardCount();
-    opt::optional<BoardId> AddBoard(const std::string& Caption);
-    opt::optional<const Board> GetBoard(BoardId Id);
-    std::vector<BoardId> GetBoardIds()
+    ItemCount ItemCount();
+    opt::optional<ItemId> AddItem(const std::string& Caption);
+    opt::optional<const Item> GetItem(ItemId Id);
+    std::vector<ItemId> GetItemIds()
     {
-        std::vector<BoardId> BoardIds;
+        std::vector<ItemId> ItemIds;
 
-        for(auto& Board : m_Boards)
+        for(auto& Item : m_Items)
         {
-            BoardIds.push_back(Board.GetId());
+            auto id = Item.GetId();
+            if(id)
+            {
+                ItemIds.push_back(*id);
+            }
         }
 
-        return BoardIds;
+        return ItemIds;
     }
 
     void Reset();
@@ -49,9 +52,9 @@ public:
     }
 
 private:
-    std::vector<Board> m_Boards;
+    std::vector<Item> m_Items;
 
-    unsigned int m_BoardIdCounter = 0;
+    unsigned int m_ItemIdCounter = 0;
 
     std::vector<Subject*> m_subs;
 };
