@@ -20,3 +20,8 @@ std::string Item::GetCaption() const
 {
     return m_Caption;
 }
+
+void Item::AddData(std::string const& data)
+{
+    m_Data = data;
+}

@@ -23,11 +23,12 @@ NepenForm::NepenForm(std::unique_ptr<Nepen> && nepen) : m_Modell(std::move(nepen
         m_Controller->NewItemBtnClicked();
     });
 
-    m_Place.div("<lb><vertical <new_nepen><new_Item><new_pile><new_card> >");
+    m_Place.div("<lb><vertical <new_nepen><new_Item><new_pile><new_card>> <DataView>");
 
     m_Place["lb"] << m_Todos;
     m_Place["new_nepen"] << m_CreateNewProject;
     m_Place["new_Item"] << m_CreateNewItem;
+    m_Place["DataView"] << m_DataView;
 
     m_Place.collocate();
 

@@ -4,6 +4,7 @@
 
 #include <nana/gui/widgets/listbox.hpp>
 #include <nana/gui/widgets/button.hpp>
+#include <nana/gui/widgets/textbox.hpp>
 
 #include "subject.hpp"
 #include "nepen.hpp"
@@ -56,6 +57,7 @@ private:
     nana::listbox   m_Todos{*this};
     nana::button    m_CreateNewProject{*this};
     nana::button    m_CreateNewItem{*this};
+    nana::textbox   m_DataView{*this};
 
     Nepen m_Nepen;
 

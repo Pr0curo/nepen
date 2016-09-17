@@ -19,7 +19,10 @@ public:
     opt::optional<ItemId> GetId() const;
     std::string GetCaption() const;
 
+    void AddData(std::string const& data);
+
 private:
     ItemId  m_Id;
     std::string m_Caption = std::string("");
+    std::string m_Data = std::string("");
 };
