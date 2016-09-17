@@ -25,3 +25,20 @@ void Item::AddData(std::string const& data)
 {
     m_Data = data;
 }
+
+bool Item::operator == (const Item& item)
+{
+    auto other_item_id = item.GetId();
+
+    if(!other_item_id)
+    {
+        return false;
+    }
+
+    if( this->m_Id != *other_item_id )
+    {
+        return false;
+    }
+
+    return true;
+}

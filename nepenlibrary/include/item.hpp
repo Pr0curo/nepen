@@ -10,11 +10,18 @@ namespace opt = std::experimental;
 
 using ItemId = boost::uuids::uuid;
 
+
+//-------------------------------------------------------------------------------------------------
+// Item ist die kleinste Informationseinheit
+// es hat eine eigene UUID zur eindeutigen Identifikation
+//-------------------------------------------------------------------------------------------------
 class Item
 {
 public:
     Item();
     Item(std::string const & Caption);
+
+    bool operator == (const Item& item);
 
     opt::optional<ItemId> GetId() const;
     std::string GetCaption() const;

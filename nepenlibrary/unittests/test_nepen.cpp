@@ -25,7 +25,7 @@ TEST_F(NepenTestFixture, test1)
     EXPECT_EQ(1u, m_Nepen.ItemCount());
 }
 
-TEST(NepenTests, DISABLE_CreateEmpty)
+TEST(NepenTests, CreateEmpty)
 {
     Nepen nep;
     EXPECT_EQ(0u, nep.ItemCount());
