@@ -10,70 +10,65 @@ public:
     }
     void SetUp( )
     {
-        m_BoardId = *m_Nepen.AddBoard("firstBoard");
+        m_ItemId = *m_Nepen.AddItem("first Item");
     }
     void TearDown( )
     {
     }
     Nepen m_Nepen;
 
-    BoardId m_BoardId;
+    ItemId m_ItemId;
 };
 
 TEST_F(NepenTestFixture, test1)
 {
-    EXPECT_EQ(1u, m_Nepen.BoardCount());
-
-    EXPECT_EQ(1u, m_BoardId);
-
-
+    EXPECT_EQ(1u, m_Nepen.ItemCount());
 }
 
 TEST(NepenTests, DISABLE_CreateEmpty)
 {
     Nepen nep;
-    EXPECT_EQ(0u, nep.BoardCount());
+    EXPECT_EQ(0u, nep.ItemCount());
 }
 
-TEST(NepenTests, AddBoard)
+TEST(NepenTests, AddItem)
 {
     Nepen nep;
-    auto BoardId = nep.AddBoard("BoardsCaption");
+    auto ItemId = nep.AddItem("ItemsCaption");
 
-    EXPECT_TRUE(BoardId);
-    EXPECT_EQ(1u, *BoardId);
+    EXPECT_TRUE(ItemId);
 
-    EXPECT_EQ(1u, nep.BoardCount());
+    EXPECT_EQ(1u, nep.ItemCount());
 }
 
 TEST(NepenTests, GetBoard)
 {
     Nepen nep;
-    auto BoardId = nep.AddBoard("BoardsCaption");
-    EXPECT_TRUE(BoardId);
+    auto ItemId = nep.AddItem("Items Caption");
+    EXPECT_TRUE(ItemId);
 
-    auto Board = nep.GetBoard(*BoardId);
-    EXPECT_TRUE(Board);
+    auto Item = nep.GetItem(*ItemId);
+    EXPECT_TRUE(Item);
 }
 
 TEST(NepenTests, GetBoardsCaption)
 {
     Nepen nep;
-    auto BoardId = nep.AddBoard("BoardsCaption");
+    auto ItemId = nep.AddItem("Items Caption");
 
-    auto TestBoard = nep.GetBoard(*BoardId);
+    auto TestItem = nep.GetItem(*ItemId);
 
-    EXPECT_TRUE(TestBoard);
+    EXPECT_TRUE(TestItem);
 
-    EXPECT_EQ(std::string("BoardsCaption"), (*TestBoard).GetCaption());
+    EXPECT_EQ(std::string("Items Caption"), (*TestItem).GetCaption());
 }
 
 TEST(NepenTests, Reset)
 {
     Nepen nep;
-    nep.AddBoard("BoardsCaption");
+    nep.AddItem("ItemsCaption");
 
     nep.Reset();
 
-    EXPECT_EQ(0u, nep.BoardCount());
+    EXPECT_EQ(0u, nep.ItemCount());
 }

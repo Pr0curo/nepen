@@ -15,8 +15,9 @@ namespace opt = std::experimental;
 using ItemCount = unsigned int;
 
 //-------------------------------------------------------------------------------------------------
+// Nepen ist das Modell, über eine Nepen-Objekt erfolgt der Zugang auf die Daten
 //
-//
+// Wo möglich wird zur Rückgabe "std::optional" verwendet
 //-------------------------------------------------------------------------------------------------
 class Nepen
 {
