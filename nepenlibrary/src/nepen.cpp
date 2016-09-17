@@ -34,3 +34,28 @@ void Nepen::Reset()
 
     TellEveryoneIChanged();
 }
+
+std::vector<ItemId> Nepen::GetItemIds()
+{
+    std::vector<ItemId> ItemIds;
+    for(auto& Item : m_Items)
+    {
+        auto id = Item.GetId();
+        if(id)
+        {
+            ItemIds.push_back(*id);
+        }
+    }
+    return ItemIds;
+}
+void Nepen::AddVisitor(gsl::not_null<Subject*> sub)
+{
+    m_subs.push_back(sub);
+}
+void Nepen::TellEveryoneIChanged()
+{
+    for(auto& subj : m_subs)
+    {
+        subj->ModellUpdated();
+    }
+}

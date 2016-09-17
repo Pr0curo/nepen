@@ -14,42 +14,23 @@ namespace opt = std::experimental;
 
 using ItemCount = unsigned int;
 
+//-------------------------------------------------------------------------------------------------
+//
+//
+//-------------------------------------------------------------------------------------------------
 class Nepen
 {
 public:
     ItemCount ItemCount();
     opt::optional<ItemId> AddItem(const std::string& Caption);
     opt::optional<const Item> GetItem(ItemId Id);
-    std::vector<ItemId> GetItemIds()
-    {
-        std::vector<ItemId> ItemIds;
-
-        for(auto& Item : m_Items)
-        {
-            auto id = Item.GetId();
-            if(id)
-            {
-                ItemIds.push_back(*id);
-            }
-        }
-
-        return ItemIds;
-    }
+    std::vector<ItemId> GetItemIds();
 
     void Reset();
 
-    void AddVisitor(gsl::not_null<Subject*> sub)
-    {
-        m_subs.push_back(sub);
-    }
+    void AddVisitor(gsl::not_null<Subject*> sub);
 
-    void TellEveryoneIChanged()
-    {
-        for(auto& subj : m_subs)
-        {
-            subj->ModellUpdated();
-        }
-    }
+    void TellEveryoneIChanged();
 
 private:
     std::vector<Item> m_Items;
