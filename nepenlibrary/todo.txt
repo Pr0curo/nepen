@@ -1,9 +1,0 @@
-# ToDo List #
-
-MVC simpelst eingebaut -- hier muss noch refactored werden -- viel refactoring ist notwendig!!!
-
-
-	☐ Derzeit sind Karten/Stapel/Boards nicht gültig wenn diese ohne Id/Caption erstellt werden
-       hier sollte boost.uuid erwogen werden
-	☐ entscheiden wie die daten serialisiert werden, evtl via json oder sqlite
-	☐ gui componente entwerfen
