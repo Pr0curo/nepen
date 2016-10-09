@@ -7,7 +7,7 @@
 
 #include <stdio.h>
 
-#include "../../sol2/sol.hpp"
+#include "../sol2/sol.hpp"
 
 // int main(int argc, const char *argv[])
 int main()

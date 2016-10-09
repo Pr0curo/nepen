@@ -7,9 +7,6 @@
 [submodule "GSL"]
 	path = GSL
 	url = https://github.com/Microsoft/GSL.git
-[submodule "nepensebla/luacppinterface"]
-	path = nepensebla/luacppinterface
-	url = https://github.com/davidsiaw/luacppinterface.git
 [submodule "nepensebla/sol2"]
 	path = nepensebla/sol2
 	url = https://github.com/ThePhD/sol2.git
