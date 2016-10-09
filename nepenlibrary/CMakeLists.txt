@@ -18,6 +18,7 @@ INCLUDE_DIRECTORIES(C:/MinGW/include/
 					${CMAKE_CURRENT_SOURCE_DIR}/include/
                     ${CMAKE_CURRENT_SOURCE_DIR}/../GSL/include/
                     ${CMAKE_CURRENT_SOURCE_DIR}/date/
+                    ${CMAKE_CURRENT_SOURCE_DIR}/
 					)
 
 # set the files to compile

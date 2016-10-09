@@ -10,6 +10,9 @@ namespace opt = std::experimental;
 
 using ItemId = boost::uuids::uuid;
 
+#include <chrono>
+#include "../date/date.h"
+
 
 //-------------------------------------------------------------------------------------------------
 // Item ist die kleinste Informationseinheit
@@ -27,6 +30,13 @@ public:
     std::string GetCaption() const;
 
     void AddData(std::string const& data);
+
+    void AddDoneDate()
+    {
+        using namespace date;
+
+        auto datum = date::year{2016};
+    }
 
 private:
     ItemId  m_Id;
